@@ -22,7 +22,7 @@ let main = document.createElement("main")
 main.classList.add("container")
 
 
-//Criando categorias
+//Criando Seção de produtos
 for(let i = 0;i<=2;i++){
 let section = document.createElement("section")
 section.classList.add("products-section")
@@ -38,25 +38,25 @@ section.appendChild(main1)
 main.appendChild(section)
 body.appendChild(main)
 if(i == 0){
-  frutas.innerText = "Bebidas"
-  ul.classList.add("c")
+  frutas.innerText = "Frutas"
+  ul.classList.add("Frutas")
 }
 if(i == 1){
   frutas.innerText = "Bebidas"
-  ul.classList.add("a")
+  ul.classList.add("Bebidas")
 }
 if(i == 2){
   frutas.innerText = "Higiene"
-  ul.classList.add("b")
+  ul.classList.add("Higiene")
 }
 
 }
 
 
 // Selecionando classes
-let c = document.querySelector(".c")
-let a = document.querySelector(".a")
-let b = document.querySelector(".b")
+let a = document.querySelector(".Frutas")
+let b = document.querySelector(".Bebidas")
+let c = document.querySelector(".Higiene")
 
 
 //Criando os cards
@@ -94,12 +94,12 @@ main2.appendChild(strong)
 li1.appendChild(main2)
 
 if(products[i].category == "Frutas"){
-  c.appendChild(li1)
-}
-if(products[i].category == "Bebidas"){
   a.appendChild(li1)
 }
+if(products[i].category == "Bebidas"){
+  b.appendChild(li1)
+}
 if(products[i].category == "Higiene"){
- b.appendChild(li1)
+ c.appendChild(li1)
 }
   } 
