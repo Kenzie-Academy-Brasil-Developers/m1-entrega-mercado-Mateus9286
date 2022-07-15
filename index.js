@@ -6,6 +6,7 @@ for(let i = 0; i < products.length; i++){
       }
   }
 
+
 // Criando cabeçalho
 let body = document.querySelector("body")
 
@@ -20,7 +21,9 @@ body.appendChild(nav)
 let main = document.createElement("main")
 main.classList.add("container")
 
-//categoria fruta
+
+//Criando categorias
+for(let i = 0;i<=2;i++){
 let section = document.createElement("section")
 section.classList.add("products-section")
 let frutas = document.createElement("h1")
@@ -34,37 +37,29 @@ main1.appendChild(ul)
 section.appendChild(main1)
 main.appendChild(section)
 body.appendChild(main)
+if(i == 0){
+  frutas.innerText = "Bebidas"
+  ul.classList.add("c")
+}
+if(i == 1){
+  frutas.innerText = "Bebidas"
+  ul.classList.add("a")
+}
+if(i == 2){
+  frutas.innerText = "Higiene"
+  ul.classList.add("b")
+}
 
-//categoria Bebidas
-let section0 = document.createElement("section")
-section0.classList.add("products-section")
-let bebidas = document.createElement("h1")
-bebidas.innerText = "Bebidas"
-let mai = document.createElement("main")
-mai.classList.add("products-content")
-let ul0 = document.createElement("ul")
-
-section0.appendChild(bebidas)
-mai.appendChild(ul0)
-section0.appendChild(mai)
-main.appendChild(section0)
-
-//categoria Higiene
-let section1 = document.createElement("section")
-section1.classList.add("products-section")
-let higiene = document.createElement("h1")
-higiene.innerText = "Higiene"
-let main12 = document.createElement("main")
-main12.classList.add("products-content")
-let u = document.createElement("ul")
-
-section1.appendChild(higiene)
-main12.appendChild(u)
-section1.appendChild(main12)
-main.appendChild(section1)
+}
 
 
-//Criando os card
+// Selecionando classes
+let c = document.querySelector(".c")
+let a = document.querySelector(".a")
+let b = document.querySelector(".b")
+
+
+//Criando os cards
   for(let i = 0 ; i < products.length;i++){
 
 let li1 = document.createElement("li")
@@ -99,12 +94,12 @@ main2.appendChild(strong)
 li1.appendChild(main2)
 
 if(products[i].category == "Frutas"){
-  ul.appendChild(li1)
+  c.appendChild(li1)
 }
 if(products[i].category == "Bebidas"){
-  ul0.appendChild(li1)
+  a.appendChild(li1)
 }
 if(products[i].category == "Higiene"){
-  u.appendChild(li1)
+ b.appendChild(li1)
 }
   } 
